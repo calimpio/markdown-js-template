@@ -6,18 +6,21 @@ const data= [
     [4,"Arkeno"],
 ]
 
-const list = ["Camilo","Patrico","Data"]
+const list = ["item1","item2","item3"]
 
 
 var root = mdc.Container({},[
-    mdc.Title({},"La casualidad de la vida"),
+    mdc.Title({},"markdown-js-template example"),
+    mdc.Code({lang:"bash"},
+        `node ./example.js`
+    ),"\n",
     mdc.TableHeader({},["nombre","data"]),
     data.map(i=>mdc.TableData({},[
             mdc.B(i[0]),
             mdc.L(i[1]),
             ])
-        ),
-    mdc.P({tabs:2},[
+        ),"\n",
+    mdc.P({},[
         "Cosas de la vida: ",mdc.Br,
         mdc.Link({href:"#La_casualidad_de_la_vida"},"Arriba"),
     ]),    
@@ -33,7 +36,7 @@ var root = mdc.Container({},[
     ]),    
     mdc.Code({lang:"js",tabs:1},
         `   const m= "wow!";`
-    ),
+    ),"\n",
     mdc.C("a code line")
 ]).render();
 
