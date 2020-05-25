@@ -1,18 +1,27 @@
 const Component = require('./src/Component');
 
-
-
-class Container extends Component{
-    render(){
-        if( this.parent instanceof NumList||
-            this.parent instanceof List )
-                this.props.tabs+=1;
-        
-        return super.render();
+class Base extends Component{
+    base(child){
+        return new Container({},child); 
     }
 }
 
-class P extends Component{
+
+class Container extends Base{
+    render(){
+        if( this.parent instanceof NumList||
+            this.parent instanceof List )
+                this.props.tabs+=1;        
+        return super.render();
+    }
+    /**
+     * 
+     * @param {[]} child 
+     */
+    
+}
+
+class P extends Base{
     toString(){
         return this.newElement()+super.toString();
     }
@@ -24,7 +33,7 @@ class P extends Component{
 
 
 
-class Title extends Component{        
+class Title extends Base{        
     toString(){
         let t="#"
         for(let i=1;i<this.props.h;i++){
@@ -38,7 +47,7 @@ class Title extends Component{
     }
 }
 
-class TableData extends Component{
+class TableData extends Base{
     toString(){        
         return this.newElement()+"|";
     }    
@@ -57,44 +66,44 @@ class TableHeader extends TableData{
     }
 }
 
-class B extends Component{
+class B extends Base{
     toString(){
         return `**${super.toString()}**`;
     }
 }
 
-class L extends Component{
+class L extends Base{
     toString(){
         return `*${super.toString()}*`
     }
 }
 
-class Link extends Component{    
+class Link extends Base{    
     toString(){
         return `[${super.toString()}]("${this.props.href}")`
     }
 }
 
-class NumList extends Component{
+class NumList extends Base{
     renderPerChildren(child,k,item){
         return this.newElement()+`${k+1}. ${child}`+(typeof item==='string'?this.endElement():"");
     }
     
 }
 
-class List extends Component{
+class List extends Base{
     renderPerChildren(child,k,item){
         return this.newElement()+`- ${child}`+(typeof item==='string'?this.endElement():"");
     }    
 }
 
-class Br extends Component{
+class Br extends Base{
     renderEnd(){
         return this.endElement()+this.newElement();
     }
 }
 
-class Code extends Component{
+class Code extends Base{
     toString(){
         return this.newElement()+"```"+this.props.lang+this.endElement()+
             this.children.split('\n').map(i=>this.newElement()+i).join(this.endElement())+this.endElement()
