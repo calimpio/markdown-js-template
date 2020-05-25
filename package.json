@@ -1,6 +1,6 @@
 {
   "name": "markdown-js-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template for markdown",
   "main": "index.js",  
   "author": "calimpio",
