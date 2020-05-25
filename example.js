@@ -19,21 +19,22 @@ var root = mdc.Container({},[
         ),
     mdc.P({tabs:2},[
         "Cosas de la vida: ",mdc.Br,
-        mdc.Link({href:"/#La_casualidad_de_la_vida"},"Arriba"),
+        mdc.Link({href:"#La_casualidad_de_la_vida"},"Arriba"),
     ]),    
     mdc.NumList({},[
         [
-            mdc.Title({h:3},"Camilo"),
+            mdc.Title({h:3},"other item"),
             mdc.List({},list)
         ],
         [
-            mdc.Title({h:3},"Daniel"),
-            mdc.NumList({},["todo calmado"])
+            mdc.Title({h:3},"title 3"),
+            mdc.NumList({},["item"])
         ]
     ]),    
     mdc.Code({lang:"js",tabs:1},
         `   const m= "wow!";`
-    )
+    ),
+    mdc.C("a code line")
 ]).render();
 
 

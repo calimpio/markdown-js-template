@@ -112,6 +112,12 @@ class Code extends Base{
     
 }
 
+class C extends Base{
+    toString(){
+        return "`"+super.toString()+"`"
+    }
+}
+
 module.exports = {
 
     /**
@@ -144,16 +150,22 @@ module.exports = {
 
 
     /** 
-     * @param {Component[]} children
+     * @param {string} children
      * @returns {B}
      */
     B: (children)=> new B({},children),
 
     /**     
-     * @param {Component[]} children
+     * @param {string} children
      * @returns {L}
      */
     L: (children)=> new L({},children),
+
+    /**     
+     * @param {string} children
+     * @returns {C}
+     */
+    C: (children)=> new C({},children),
 
     /**
      * @param {Component.propsDef} props
