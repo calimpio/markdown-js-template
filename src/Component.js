@@ -83,7 +83,11 @@ module.exports = class Component{
             if(typeof this.children.map === 'function')
                 d = this.children.map((i,k)=>{
                     if(i instanceof Component)            
-                        return this.renderPerChildren(i.render(),k,i);            
+                        return this.renderPerChildren(i.render(),k,i);
+                    if(typeof i.map === 'function'){
+                        var c = new Component({},i);
+                        return this.renderPerChildren(c.render(),k,c);
+                    }                                    
                     return this.renderPerChildren(i,k,i);   
                 }).join(''); 
         }        

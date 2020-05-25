@@ -34,7 +34,7 @@ var root = mdc.Container({},[
         ])
     ]),    
     mdc.Code({lang:"js",tabs:1},
-    `   const m= "wow!";`
+        `   const m= "wow!";`
     )
 ]).render();
 
