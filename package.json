@@ -1,0 +1,9 @@
+{
+  "name": "markdown-js-template",
+  "version": "1.0.0",
+  "description": "Template for markdown",
+  "main": "index.js",
+  "bin": "markdown-js-t",  
+  "author": "calimpio",
+  "license": "MIT"
+}
