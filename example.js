@@ -12,12 +12,10 @@ const list = ["Camilo","Patrico","Data"]
 var root = mdc.Container({},[
     mdc.Title({},"La casualidad de la vida"),
     mdc.TableHeader({},["nombre","data"]),
-    mdc.Container({},
-        data.map(i=>mdc.TableData({},[
-            mdc.B(i[0]),
-            mdc.L(i[1]),
-            ])
-        )
+    data.map(i=>mdc.TableData({},[
+        mdc.B(i[0]),
+        mdc.L(i[1]),
+        ])
     ),
     mdc.P({tabs:2},[
         "Cosas de la vida: ",mdc.Br,
