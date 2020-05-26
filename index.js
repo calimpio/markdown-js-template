@@ -14,10 +14,12 @@ class Container extends Base{
                 this.props.tabs+=1;        
         return super.render();
     }
-    /**
-     * 
-     * @param {[]} child 
-     */
+    renderPerChildren(str,key,child){
+        if( (this.parent instanceof NumList||
+            this.parent instanceof List )&& (key==0 && !child instanceof Title) )
+            return str+this.endElement();
+        return super.renderPerChildren(str,key,child);
+    }
     
 }
 
