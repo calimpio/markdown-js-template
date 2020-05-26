@@ -16,7 +16,7 @@ class Container extends Base{
     }
     renderPerChildren(str,key,child){
         if( (this.parent instanceof NumList||
-            this.parent instanceof List )&& (key==0 && !child instanceof Title) )
+            this.parent instanceof List )&& (key==0 && !(child instanceof Title)) )
             return str+this.endElement();
         return super.renderPerChildren(str,key,child);
     }

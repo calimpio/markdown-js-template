@@ -26,7 +26,9 @@ var root = mdc.Container({},[
     ]),    
     mdc.NumList({},[
         [
-            mdc.Title({h:3},"other item"),
+            mdc.B("other item"),
+            "data",
+            "data",
             mdc.List({},list)
         ],
         [
