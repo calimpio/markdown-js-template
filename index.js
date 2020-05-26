@@ -86,22 +86,23 @@ class Link extends Base{
 
 class NumList extends Base{
     renderPerChildren(child,k,item){
-        return this.endElement()+this.newElement()+`${k+1}. ${child}`;
+        
+        return ((k>0)?this.endElement():"")+this.newElement()+`${k+1}. ${child}`;
     }
 
     renderEnd(){
-        return this.endElement();
+        return (this.props.tabs==0)?this.endElement():"";
     }
     
 }
 
 class List extends Base{
     renderPerChildren(child,k,item){
-        return this.endElement()+this.newElement()+`- ${child}`;
+        return ((k>0)?this.endElement():"")+this.newElement()+`- ${child}`;
     }
     
     renderEnd(){
-        return this.endElement();
+        return (this.props.tabs==0)?this.endElement():"";
     }
 }
 
