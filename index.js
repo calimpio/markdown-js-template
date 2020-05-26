@@ -87,7 +87,7 @@ class Link extends Base{
 class NumList extends Base{
     renderPerChildren(child,k,item){
         
-        return ((k>0)?this.endElement():"")+this.newElement()+`${k+1}. ${child}`;
+        return this.endElement()+this.newElement()+`${k+1}. ${child}`;
     }
 
     renderEnd(){
@@ -98,7 +98,7 @@ class NumList extends Base{
 
 class List extends Base{
     renderPerChildren(child,k,item){
-        return ((k>0)?this.endElement():"")+this.newElement()+`- ${child}`;
+        return this.endElement()+this.newElement()+`- ${child}`;
     }
     
     renderEnd(){
