@@ -202,7 +202,7 @@ module.exports = {
     /**     
      * @returns {Br}
      */
-    Br: new Br({},""),
+    Br:()=> new Br({},""),
 
     /**
      * @param {Component.propsDef} props

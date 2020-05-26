@@ -20,7 +20,7 @@ var root = mdc.Container({},[
             mdc.L(i[1]),
             ])
         ),"\n",
-    mdc.P({},[
+    mdc.P({tabs:5},[
         "Cosas de la vida: ",mdc.Br,
         mdc.Link({href:"#La_casualidad_de_la_vida"},"Arriba"),
     ]),    
