@@ -31,10 +31,16 @@ var root = mdc.Container({},[
         ],
         [
             mdc.Title({h:3},"title 3"),
-            mdc.NumList({},["item"])
+            mdc.NumList({},["item",
+            ()=>[mdc.Link({},"Wow")],
+            [
+                mdc.Title({},"wow"),
+                mdc.List({},["a","b","c"])
+            ]])
+            
         ]
     ]),    
-    mdc.Code({lang:"js",tabs:1},
+    mdc.Code({lang:"js"},
         `   const m= "wow!";`
     ),"\n",
     mdc.C("a code line")

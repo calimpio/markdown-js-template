@@ -86,15 +86,23 @@ class Link extends Base{
 
 class NumList extends Base{
     renderPerChildren(child,k,item){
-        return this.newElement()+`${k+1}. ${child}`+(typeof item==='string'?this.endElement():"");
+        return this.endElement()+this.newElement()+`${k+1}. ${child}`;
+    }
+
+    renderEnd(){
+        return this.endElement();
     }
     
 }
 
 class List extends Base{
     renderPerChildren(child,k,item){
-        return this.newElement()+`- ${child}`+(typeof item==='string'?this.endElement():"");
-    }    
+        return this.endElement()+this.newElement()+`- ${child}`;
+    }
+    
+    renderEnd(){
+        return this.endElement();
+    }
 }
 
 class Br extends Base{
